@@ -1,0 +1,199 @@
+:root {
+  --primary-color: #1E90FF;
+  --primary-dark: #0063cb;
+  --primary-light: #6fc0ff;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+header {
+  font-size: 0.8em;
+  color: white;
+  text-align: center;
+  padding-top: 0.2em;
+}
+
+header > a:visited {
+  color: white;
+}
+
+.flex-container {
+  /*want to flex container to grow based on content - quote*/
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+
+  background: white;
+  border-radius: 2%;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  font-size: 1.25em;
+  position: absolute;
+
+  /*equal left/right margin centers container*/
+  margin: auto 10vw 0;
+  width: 80vw;
+  top: 10%;
+  min-height: 80%;
+
+}
+
+.btn-row {
+  /*since flex-direction is column-reverse
+  order 1 means item is displayed on bottom */
+  order: 1;
+  /*flex property is shorthand for flex-grow, flex-shrink and flex-basis*/
+  flex: 0 0 15vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  background-color: transparent; /*by default*/
+  border: none;
+  outline: none;
+  border-radius: 5%;
+  text-align: center;
+  font-size: 70%;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.get-btn {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 60%;
+}
+
+.back-btn:disabled {
+  color: gray;
+}
+
+.get-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.share-btn {
+  color: var(--primary-color);
+  visibility: hidden; /*hidden at first*/
+}
+
+i {
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+}
+
+i:hover {
+  color: var(--primary-dark);
+}
+
+button:disabled {
+  visibility: hidden;
+  /*color: gray;*/
+}
+
+.quote-row {
+  order: 2;
+  flex: 0 1 auto;
+  /*content will expand downward with first line
+  at the same length unless the line is long and then
+  it will move upwards */
+  min-height: 55vh;
+  display: flex;
+  justify-content: center;
+  font-family: 'Palanquin', sans-serif;
+}
+
+blockquote {
+  text-align: center;
+  max-width: 85%;
+  color: var(--primary-dark);
+}
+
+hr {
+  border: 0;
+  height: 0;
+  box-shadow: 0 0 2px 1px var(--primary-light);
+}
+
+hr:after {
+  content: "\00a0";  /* Prevent margin collapse */
+}
+
+/* Tablets in portrait (768px and up) */
+@media screen and (min-width: 768px) and (orientation: portrait) {
+  .flex-container {
+    width: 70vw;
+    margin: auto 15vw 0;
+    font-size: 2em;
+    top: 12.5%;
+    min-height: 75%;
+  }
+
+  blockquote {
+    max-width: 70%;
+  }
+}
+
+/* Desktops and tables in landscape */
+@media screen and (min-width: 768px) and (orientation: landscape){
+  .flex-container {
+    width: 65vw;
+    margin: auto 17.5vw 0;
+    font-size: 2em;
+  }
+
+  .quote-row {
+    min-height: 50vh;
+  }
+
+  blockquote {
+    max-width: 65%;
+  }
+}
+
+/* animation-related CSS */
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Machine</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Palanquin">
+  <link rel="stylesheet" href="./styles/normalize.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+<header>
+  Pen by <a href="https://joshmorel.ca/" target="_blank">Josh Morel</a> | Quotes via <a href="http://forismatic.com/en/" target="_blank">Forismatic</a>
+</header>
+<main class="flex-container">
+    <div class="flex-item quote-row">
+      <blockquote class="animated">
+        <span class="caption">Beautiful Quotes</span>
+        <hr/>
+        <em class="author">via Forismatic</em>
+      </blockquote>
+    </div>
+    <div class="flex-item btn-row">
+      <button onClick="quoteMachine.goBack()" class="btn back-btn" disabled><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+      <button onClick="quoteMachine.showQuote()" class="btn get-btn">Get New Quote!</button>
+      <a class="btn share-btn" href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+</main>
+<footer></footer>
+<script src="./app.js"></script>
+</body>
+</html>
