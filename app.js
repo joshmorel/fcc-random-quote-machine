@@ -98,7 +98,7 @@ const quoteMachine =
     }
     quoteAnimated.addEventListener('animationend', removeFadeIn);
 
-    const endpoint = "https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&callback=jsonp";
+    const endpoint = "https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en";
     const tweetBaseUrl = "https://twitter.com/intent/tweet?";
 
     function getDefaultQuote() {
